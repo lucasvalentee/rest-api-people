@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var people_1 = require("./people");
+var adresses_1 = require("./adresses");
+var routes = express_1.Router();
+routes.get('/people', people_1.listPeople);
+routes.post('/people', people_1.createPerson);
+routes.put('/people/:id', people_1.updatePerson);
+routes.delete('/people/:id', people_1.dropPerson);
+routes.get('/adresses', adresses_1.listAdresses);
+routes.post('/adresses', adresses_1.createAdress);
+routes.put('/adresses/:id', adresses_1.updateAdress);
+routes.delete('/adresses/:id', adresses_1.dropAdress);
+exports.default = routes;
